@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Form from "./components/Form";
 import TodoList from "./components/TodoList";
 import "../src/styles/App.css";
+import Header from "./components/Header";
 
 const App = () => {
   const initialState = JSON.parse(localStorage.getItem("todoList")) || [];
@@ -11,43 +12,50 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem("todoList", JSON.stringify(todoList));
   }, [todoList]);
-  // const renderList = () => {
-  //   return (
-  //     <div>
-  //       {todoList.map((item, index) => {
-  //         return (
-  //           <div key={item.id}>
-  //             <p>
-  //               {item.id}:{item.title}
-  //             </p>
-  //           </div>
-  //         );
-  //       })}
-  //     </div>
-  //   );
-  // };
 
   return (
-    <div>
-      <div>
-        <Form
-          input={input}
-          setInput={setInput}
-          todoList={todoList}
-          setTodoList={setTodoList}
-          editTodo={editTodo}
-          setEditTodo={setEditTodo}
-        />
-      </div>
-      {/* {renderList()} */}
-      <div>
-        <TodoList
-          todoList={todoList}
-          setTodoList={setTodoList}
-          setEditTodo={setEditTodo}
-        />
+    <div className="container">
+      <div className="app-wrapper">
+        <div>
+          <Header />
+        </div>
+        <div>
+          <Form
+            input={input}
+            setInput={setInput}
+            todoList={todoList}
+            setTodoList={setTodoList}
+            editTodo={editTodo}
+            setEditTodo={setEditTodo}
+          />
+        </div>
+        <div>
+          <TodoList
+            todoList={todoList}
+            setTodoList={setTodoList}
+            setEditTodo={setEditTodo}
+          />
+        </div>
       </div>
     </div>
+    // <div>
+    //   <div>
+    //     <Form
+    //       input={input}
+    //       setInput={setInput}
+    //       todoList={todoList}
+    //       setTodoList={setTodoList}
+    //       editTodo={editTodo}
+    //       setEditTodo={setEditTodo}
+    //     />
+
+    //     <TodoList
+    //       todoList={todoList}
+    //       setTodoList={setTodoList}
+    //       setEditTodo={setEditTodo}
+    //     />
+    //   </div>
+    // </div>
   );
 };
 

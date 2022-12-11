@@ -51,6 +51,7 @@ const Form = ({
     <div>
       <form>
         <input
+          className=" task-input"
           type="text"
           placeholder="enter to do"
           value={input}
@@ -58,7 +59,7 @@ const Form = ({
           onChange={onInputChange}
           //   onClick={handleSubmit}
         />
-        <button onClick={handleSubmit} type="submit">
+        <button className="button-add" onClick={handleSubmit} type="submit">
           {editTodo ? "ok" : "add"}
         </button>
       </form>
