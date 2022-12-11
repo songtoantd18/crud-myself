@@ -11,21 +11,6 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem("todoList", JSON.stringify(todoList));
   }, [todoList]);
-  // const renderList = () => {
-  //   return (
-  //     <div>
-  //       {todoList.map((item, index) => {
-  //         return (
-  //           <div key={item.id}>
-  //             <p>
-  //               {item.id}:{item.title}
-  //             </p>
-  //           </div>
-  //         );
-  //       })}
-  //     </div>
-  //   );
-  // };
 
   return (
     <div>
