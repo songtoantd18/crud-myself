@@ -9,10 +9,6 @@ const Form = ({
   setEditTodo,
 }) => {
   const updateTodo = (title, id, completed) => {
-    console.log("title:", title);
-    console.log("id:", id);
-    console.log("completed:", completed);
-
     const newTodo = todoList.map((item) =>
       item.id === id ? { title, id, completed } : item
     );
@@ -20,7 +16,6 @@ const Form = ({
     setEditTodo("");
   };
   useEffect(() => {
-    console.log("editTodo:", editTodo);
     if (editTodo) {
       setInput(editTodo.title);
     } else {

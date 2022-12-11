@@ -77,7 +77,7 @@
   color: lightseagreen;
 }
 .completed {
-  text-decoration: solid line-through #00ff00;
+  text-decoration: solid line-through #9494b8;
   opacity: 0.6;
 }
 .list {
